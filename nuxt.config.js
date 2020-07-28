@@ -14,7 +14,47 @@ export default {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href: '/style.css',
+        type: 'text/css'
+      },
+      {
+        rel: 'stylesheet',
+        href: '/css/responsive/responsive.css',
+        type: 'text/css'
+      },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css',
+        type: 'text/css'
+      },
+      {
+        rel: 'stylesheet',
+        href: 'css/style.css',
+        type: 'text/css'
+      }
+    ],
+    script: [
+      { src: '/js/jquery/jquery-2.2.4.min.js', body: true },
+      { src: '/js/bootstrap/popper.min.js', body: true },
+      { src: '/js/bootstrap/bootstrap.min.js', body: true },
+      { src: '/js/others/plugins.js', body: true },
+      {
+        src: 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js',
+        body: true
+      },
+      // {
+      //   src:
+      //     'https://maps.googleapis.com/maps/api/js?key=AIzaSyDk9KNSL1jTv4MY9Pza6w8DJkpI_nHyCnk',
+      //   body: true
+      // },
+      { src: '/js/google-map/explore-map-active.js', body: true },
+      { src: '/js/active.js', body: true }
+    ]
   },
   /*
    ** Customize the progress-bar color
@@ -27,13 +67,13 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [{ src: '~/plugins/carousel.js', mode: 'client' }],
   /*
    ** Nuxt.js dev-modules
    */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module'
+    // '@nuxtjs/eslint-module'
   ],
   /*
    ** Nuxt.js modules
